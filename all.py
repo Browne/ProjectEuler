@@ -82,6 +82,29 @@ def euler_6():
 	SquareOfSums = SquareOfSums**2
 	print (SquareOfSums - sumOfSquares)	
 
+def helper_7():
+	'''Generate prime numbers, from http://code.activestate.com/recipes/117119/'''
+	D = {}
+	q = 2  
+	while True:
+		if q not in D: 
+			yield q        
+			D[q * q] = [q]
+		else:
+			for p in D[q]:
+				D.setdefault(p + q, []).append(p)
+			del D[q]
+		q += 1
+	n = 10001
+
+def euler_7():
+	'''Find the 10001 prime number'''
+	n = 10001	
+	return (j for i,j in enumerate(helper_7()) if i == n-1).next()
+
+
+def euler_8():
+	pass
 
 
 euler_1()
@@ -90,3 +113,4 @@ euler_3()
 euler_4()
 euler_5()
 euler_6()
+print euler_7()
