@@ -72,9 +72,21 @@ def euler_5():
 		else:	
 			i = i + 1	
 		
+def euler_6():
+	'''Calculate the difference between sum of squares and square of the sum for [1..100]'''
+	SquareOfSums = 0
+	sumOfSquares = 0
+	for x in range (1, 101, 1):
+		SquareOfSums = SquareOfSums + x
+		sumOfSquares = sumOfSquares + (x**2)
+	SquareOfSums = SquareOfSums**2
+	print (SquareOfSums - sumOfSquares)	
+
+
 
 euler_1()
 euler_2()
 euler_3()		
 euler_4()
 euler_5()
+euler_6()
