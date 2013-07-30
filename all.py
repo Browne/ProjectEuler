@@ -30,31 +30,16 @@ def euler_3():
 def euler_4():
 	'''Find largest palindrome between 0 and 999*999'''
 	isPali = lambda x: str(x) == str(x)[::-1]
-	# palis = []
 	largest = 0
 	y = 999*999
-	# for x in range (y, 1000, -1):
 	'''Put all palindromes in a list, largest first'''
 	for i in range (999, 100, -1):
 		for j in range (999, 100, -1):
 			x = i*j
 			if (x > largest) and isPali(x):
 				largest = x
-			# return 1;
 	print largest
-	# 		palis.append(x)
-	# print palis[:7]
-	# for pali in palis[:7]:
-	# 	print helper_4(pali)
-		
-# def helper_4(pali):
-# 	'''Get the factors of a passed value)'''
-# 	result = set()
-# 	for i in range(1, int(pali ** 0.5) + 1):
-# 		div, mod = divmod(pali, i)
-# 		if mod == 0:
-# 			result |= {i, div}
-# 	return result
+
 
 def euler_5():
 	'''Smallest +ve number that is divisible by all of 1 to 20'''
