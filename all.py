@@ -56,9 +56,25 @@ def euler_4():
 # 			result |= {i, div}
 # 	return result
 
-
+def euler_5():
+	'''Smallest +ve number that is divisible by all of 1 to 20'''
+	divisors = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11]
+	x = 2520
+	i = 0
+	while True:
+		if (x % divisors[i] != 0):
+			x = x + 20 #Has to be a multiple of 20!
+			i = 0 #Reset i to restart
+		elif (i >= 9):
+			'''If we've reached the end of divisors we're finished'''
+			print x
+			return True	
+		else:	
+			i = i + 1	
+		
 
 euler_1()
 euler_2()
 euler_3()		
 euler_4()
+euler_5()
